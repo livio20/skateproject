@@ -12,7 +12,7 @@ import pandas as pd
 from flask import Flask, render_template, request, Response , redirect , url_for
 app = Flask(__name__)
 
-dati = pd.read_csv("/workspace/Flask/database.csv")
+dati = pd.read_csv("database.csv")
 park1 = pd.read_csv('skatepark_milano_list.csv')
 milano = gpd.read_file('ds964_nil_wm-20220322T104009Z-001.zip')
 PARKS1 = gpd.read_file('PARKS.geojson')
