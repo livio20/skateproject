@@ -68,7 +68,7 @@ def register():
             return 'le password non corrispondono'
         else:
             dati_append = dati.append(utente,ignore_index=True)
-            dati_append.to_csv('/workspace/Flask/database.csv',index=False)
+            dati_append.to_csv('database.csv',index=False)
             return render_template('login.html',  psw = psw ,utente = utente, email = email)
 
 
