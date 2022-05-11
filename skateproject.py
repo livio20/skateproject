@@ -12,6 +12,7 @@ import pandas as pd
 from flask import Flask, render_template, request, Response , redirect , url_for
 app = Flask(__name__)
 
+tavola = pd.read_csv("static/csv/tavole.csv")
 dati = pd.read_csv("database.csv")
 park1 = pd.read_csv('skatepark_milano_list.csv')
 milano = gpd.read_file('ds964_nil_wm-20220322T104009Z-001.zip')
@@ -47,7 +48,6 @@ def selezione1():
 @app.route('/register', methods=['GET', 'POST'])
 def register():
     
-
     global utente
 
     if request.method == 'GET':
@@ -69,10 +69,7 @@ def register():
         else:
             dati_append = dati.append(utente,ignore_index=True)
             dati_append.to_csv('database.csv',index=False)
-            return render_template('login.html',  psw = psw ,utente = utente, email = email)
-
-
-
+            return render_template('login.html',  psw = psw , email = email)
 
 
 ##login##
@@ -91,7 +88,7 @@ def login():
             print(psw, email)
 
         for _, r in dati.iterrows():
-            if email == r['email'] and psw == r['psw']:  
+            if email == r['email'] and pas == r['psw']:  
                 return '<h1>login effettuato </h1>'
 
         return '<h1>Errore</h1>'
@@ -115,8 +112,12 @@ def storia():
 
 @app.route("/tavole", methods=["GET"])
 def tavole():
-    return render_template("tavole.html")
+    return render_template("tavole.html",risultato=tavola['foto'].to_list())
 
+@app.route("/dettaglio/<foto>", methods=["GET"])
+def dettaglio(foto):
+    tav=tavola[tavola['foto']==foto]
+    return render_template("dettaglio.html",marca=tav.marca,prezzo=tav.prezzo,dimensione=tav.dimensione )
 
 @app.route("/truck", methods=["GET"])
 def truck():
