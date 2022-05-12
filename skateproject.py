@@ -24,6 +24,7 @@ def scelta():
     return render_template("choice.html")
 
 
+
 @app.route('/selezione', methods=['GET'])
 def selezione():
 
@@ -92,6 +93,66 @@ def login():
                 return '<h1>login effettuato </h1>'
 
         return '<h1>Errore</h1>'
+                       
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -117,7 +178,7 @@ def tavole():
 @app.route("/dettaglio/<foto>", methods=["GET"])
 def dettaglio(foto):
     tav=tavola[tavola['foto']==foto]
-    return render_template("dettaglio.html",marca=tav.marca,prezzo=tav.prezzo,dimensione=tav.dimensione )
+    return render_template("dettaglio.html",marca=list(tav.marca),prezzo=list(tav.prezzo),dimensione=list(tav.dimensione) )
 
 @app.route("/truck", methods=["GET"])
 def truck():
