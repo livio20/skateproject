@@ -21,29 +21,11 @@
     <section>
         <article>
             <div class="container-imgs">
-                <div>
-                    <img src="https://media.titus.de/media/image/1d/d9/41/santa-cruz-skate-wachs-classic-dot-skate-wax-box-of-12-natural-vorderansicht-0200074_600x600.jpg" width:="150" height="180" />
-                    <p>Santa-Cruz € 69,99</p>
-                </div>
-                <div> <img src="https://media.titus.de/media/image/27/9e/8c/Toy-Machine-Skate-Wachs-Curb-Wax-purple-Vorderansicht_600x600.jpg" width:="150" height="180" />
-                    <p>Toy-Machine€ 7,99</p>
-                </div>
-
-                <div>
-                    <img src="https://media.titus.de/media/image/38/fd/a5/toy-machine-skate-wachs-wax-v-h-s-black-vorderansicht-0200043_600x600.jpg" width:="150" height="180" />
-                    <p>Toy-Machine € 8,99</p>
-                </div>
-                <div>
-                    <img src="https://media.titus.de/media/image/08/4b/c2/Grizzly-Skate-Wachs-Grease-royal-Vorderansicht_600x600.jpg" width:="150" height="180" />
-                    <p>Grizzly € 13,99</p>
-                </div>
-                <div>
-                    <img src="https://media.titus.de/media/image/ef/b5/bb/Shortys-Skate-Wachs-Curb-Candy-Wax-In-A-Box-red-Vorderansicht_600x600.jpg" width:="150" height="180" />
-                    <p>Shortys € 9,99</p>
-                </div>
-                <div>
-                    <img src="https://media.titus.de/media/image/40/be/eb/darkroom-skate-wachs-invader-blue-vorderansicht-0200077_600x600.jpg" width:="150" height="180" />
-                    <p>Darkroom € 11,99</p>
+                
+                {%for image in risultato%}
+                <a href="/dettaglio/{{image}}"><img src="static/img/Wax/{{image}}" /></href>
+                {%endfor%}
+                
                 </div>
             </div>
         </article>

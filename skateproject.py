@@ -13,6 +13,7 @@ from flask import Flask, render_template, request, Response , redirect , url_for
 app = Flask(__name__)
 
 tavola = pd.read_csv("static/csv/tavole.csv")
+cera = pd.read_csv("static/csv/wax.csv")
 dati = pd.read_csv("database.csv")
 park1 = pd.read_csv('skatepark_milano_list.csv')
 milano = gpd.read_file('ds964_nil_wm-20220322T104009Z-001.zip')
@@ -178,7 +179,10 @@ def tavole():
 @app.route("/dettaglio/<foto>", methods=["GET"])
 def dettaglio(foto):
     tav=tavola[tavola['foto']==foto]
-    return render_template("dettaglio.html",marca=list(tav.marca),prezzo=list(tav.prezzo),dimensione=list(tav.dimensione) )
+    wa=cera[cera['foto']==foto]
+    return render_template("dettaglio.html",marca=list(tav.marca),prezzo=list(tav.prezzo),dimensione=list(tav.dimensione),
+    marca1=list(wa.marca1),prezzo1=list(wa.prezzo1),dimensione1=list(wa.dimensione1),colore1=list(wa.colore1))
+    
 
 @app.route("/truck", methods=["GET"])
 def truck():
@@ -212,7 +216,7 @@ def tool():
 
 @app.route("/wax", methods=["GET"])
 def wax():
-    return render_template("wax.html")
+    return render_template("wax.html",risultato=cera['foto'].to_list())
 
 
 @app.route("/guida_tavole", methods=["GET"])
