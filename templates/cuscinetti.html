@@ -22,32 +22,12 @@
     <section>
 
         <article>
-            <div class="container-imgs"> Cuscinetti
-                <div>
-                    <img src="" width:="150" height="180" />
-                    <p>Bronson Ceramic 89,90 €</p>
-                </div>
-                <div> <img src="" width:="150" height="180" />
-                    <p>Independent GP-R 19,90 €</p>
-                </div>
+            <div class="container-imgs">
+               
+                {%for image in risultato%}
+                <a href="/dettaglio_cuscinetti/{{image}}"><img src="static/img/cuscinetti/{{image}}" /></href>
+                {%endfor%}
 
-                <div>
-                    <img src="" width:="150" height="180" />
-                    <p> Bronson Raw 49,90 €</p>
-                </div>
-                <div>
-                    <img src="" width:="150" height="180" />
-                    <p>Bronson G2 24,90 €</p>
-                </div>
-                <div>
-                    <img src="" width:="150" height="180" />
-                    <p>Grizzly Ings 25,80 €</p>
-                </div>
-                <div>
-                    <img src="" width:="150" height="180" />
-                    <p>Bones Reds 24,90 €</p>
-                </div>
-            </div>
         </article>
     </section>
 

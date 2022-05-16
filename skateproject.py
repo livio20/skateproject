@@ -12,8 +12,16 @@ import pandas as pd
 from flask import Flask, render_template, request, Response , redirect , url_for
 app = Flask(__name__)
 
-tavola = pd.read_csv("static/csv/tavole.csv")
-cera = pd.read_csv("static/csv/wax.csv")
+
+cuscinetti1 = pd.read_csv("static/csv/cuscinetti.csv")
+grip1 = pd.read_csv("static/csv/grip.csv")
+hardware1 = pd.read_csv("static/csv/hardware.csv")
+ruote1 = pd.read_csv("static/csv/ruote.csv")
+tavole1 = pd.read_csv("static/csv/tavole.csv")
+tool1 = pd.read_csv("static/csv/tool.csv")
+truck1 = pd.read_csv("static/csv/truck.csv")
+wax1 = pd.read_csv("static/csv/wax.csv")
+
 dati = pd.read_csv("database.csv")
 park1 = pd.read_csv('skatepark_milano_list.csv')
 milano = gpd.read_file('ds964_nil_wm-20220322T104009Z-001.zip')
@@ -174,49 +182,83 @@ def storia():
 
 @app.route("/tavole", methods=["GET"])
 def tavole():
-    return render_template("tavole.html",risultato=tavola['foto'].to_list())
+    return render_template("tavole.html",risultato=tavole1['foto'].to_list())
 
-@app.route("/dettaglio/<foto>", methods=["GET"])
-def dettaglio(foto):
-    tav=tavola[tavola['foto']==foto]
-    wa=cera[cera['foto']==foto]
-    return render_template("dettaglio.html",marca=list(tav.marca),prezzo=list(tav.prezzo),dimensione=list(tav.dimensione),
-    marca1=list(wa.marca1),prezzo1=list(wa.prezzo1),dimensione1=list(wa.dimensione1),colore1=list(wa.colore1))
+@app.route("/dettaglio_tavole/<foto>", methods=["GET"])
+def dettaglio_tavole(foto):
+    tav=tavole1[tavole1['foto']==foto]
+    return render_template("dettaglio_tavole.html",marca=list(tav.marca),prezzo=list(tav.prezzo),dimensione=list(tav.dimensione))
     
 
 @app.route("/truck", methods=["GET"])
 def truck():
-    return render_template("truck.html")
+    return render_template("truck.html",risultato=truck1['foto'].to_list())
 
+@app.route("/dettaglio_truck/<foto>", methods=["GET"])
+def dettaglio_truck(foto):
+    tru=truck1[truck1['foto']==foto]
+    return render_template("dettaglio_truck.html",marca=list(tru.marca),prezzo=list(tru.prezzo),dimensione=list(tru.dimensione))
+    
 
 @app.route("/ruote", methods=["GET"])
 def ruote():
-    return render_template("ruote.html")
+    return render_template("ruote.html",risultato=ruote1['foto'].to_list())
 
+@app.route("/dettaglio_ruote/<foto>", methods=["GET"])
+def dettaglio_ruote(foto):
+    ruo=ruote1[ruote1['foto']==foto]
+    return render_template("dettaglio_ruote.html",marca=list(ruo.marca),prezzo=list(ruo.prezzo),dimensione=list(ruo.dimensione))
+    
 
 @app.route("/cuscinetti", methods=["GET"])
 def cuscinetti():
-    return render_template("cuscinetti.html")
+    return render_template("cuscinetti.html",risultato=cuscinetti1['foto'].to_list())
 
+@app.route("/dettaglio_cuscinetti/<foto>", methods=["GET"])
+def dettaglio_cuscinetti(foto):
+    cus=cuscinetti1[cuscinetti1['foto']==foto]
+    return render_template("dettaglio_cuscinetti.html",marca=list(cus.marca),prezzo=list(cus.prezzo),dimensione=list(cus.dimensione))
+    
 
 @app.route("/hardware", methods=["GET"])
 def hardware():
-    return render_template("hardware.html")
+    return render_template("hardware.html",risultato=hardware1['foto'].to_list())
 
+@app.route("/dettaglio_hardware/<foto>", methods=["GET"])
+def dettaglio_hardware(foto):
+    har=hardware1[hardware1['foto']==foto]
+    return render_template("dettaglio_hardware.html",marca=list(har.marca),prezzo=list(har.prezzo),dimensione=list(har.dimensione))
+    
 
 @app.route("/grip_tape", methods=["GET"])
 def grip():
-    return render_template("grip_tape.html")
+    return render_template("grip_tape.html",risultato=grip1['foto'].to_list())
 
+@app.route("/dettaglio_grip/<foto>", methods=["GET"])
+def dettaglio_grip(foto):
+    gri=grip1[grip1['foto']==foto]
+    return render_template("dettaglio_grip.html",marca=list(gri.marca),prezzo=list(gri.prezzo),dimensione=list(gri.dimensione))
+    
 
 @app.route("/tool", methods=["GET"])
 def tool():
-    return render_template("tool.html")
+    return render_template("tool.html",risultato=tool1['foto'].to_list())
 
+@app.route("/dettaglio_tool/<foto>", methods=["GET"])
+def dettaglio_tool(foto):
+    too=tool1[tool1['foto']==foto]
+    return render_template("dettaglio_tool.html",marca=list(too.marca),prezzo=list(too.prezzo),dimensione=list(too.dimensione))
+    
 
 @app.route("/wax", methods=["GET"])
 def wax():
-    return render_template("wax.html",risultato=cera['foto'].to_list())
+    return render_template("wax.html",risultato=wax1['foto'].to_list())
+
+@app.route("/dettaglio_wax/<foto>", methods=["GET"])
+def dettaglio_wax(foto):
+    waa=wax1[wax1['foto']==foto]
+    return render_template("dettaglio_wax.html",marca=list(waa.marca),prezzo=list(waa.prezzo),dimensione=list(waa.dimensione))
+    
 
 
 @app.route("/guida_tavole", methods=["GET"])
