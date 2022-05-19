@@ -247,7 +247,7 @@ def tool():
 @app.route("/dettaglio_tool/<foto>", methods=["GET"])
 def dettaglio_tool(foto):
     too=tool1[tool1['foto']==foto]
-    return render_template("dettaglio_tool.html",marca=list(too.marca),prezzo=list(too.prezzo),dimensione=list(too.dimensione))
+    return render_template("dettaglio_tool.html",marca=list(too.marca),prezzo=list(too.prezzo))
     
 
 @app.route("/wax", methods=["GET"])
@@ -257,7 +257,7 @@ def wax():
 @app.route("/dettaglio_wax/<foto>", methods=["GET"])
 def dettaglio_wax(foto):
     waa=wax1[wax1['foto']==foto]
-    return render_template("dettaglio_wax.html",marca=list(waa.marca),prezzo=list(waa.prezzo),dimensione=list(waa.dimensione))
+    return render_template("dettaglio_wax.html",marca=list(waa.marca),prezzo=list(waa.prezzo))
     
 
 
