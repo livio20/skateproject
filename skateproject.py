@@ -104,71 +104,13 @@ def login():
         return '<h1>Errore</h1>'
                        
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 @app.route("/home", methods=["POST", "GET"])
 def home():
     return render_template("home.html")
+
+@app.route("/th", methods=["POST", "GET"])
+def hme():
+    return render_template("th1.html")
 
 @app.route("/login1", methods=["GET"])
 def home1():
@@ -217,7 +159,7 @@ def cuscinetti():
 @app.route("/dettaglio_cuscinetti/<foto>", methods=["GET"])
 def dettaglio_cuscinetti(foto):
     cus=cuscinetti1[cuscinetti1['foto']==foto]
-    return render_template("dettaglio_cuscinetti.html",marca=list(cus.marca),prezzo=list(cus.prezzo),dimensione=list(cus.dimensione))
+    return render_template("dettaglio_cuscinetti.html",marca=list(cus.marca),prezzo=list(cus.prezzo),foto=list(cus.foto))
     
 
 @app.route("/hardware", methods=["GET"])
@@ -237,7 +179,7 @@ def grip():
 @app.route("/dettaglio_grip/<foto>", methods=["GET"])
 def dettaglio_grip(foto):
     gri=grip1[grip1['foto']==foto]
-    return render_template("dettaglio_grip.html",marca=list(gri.marca),prezzo=list(gri.prezzo),dimensione=list(gri.dimensione))
+    return render_template("dettaglio_grip.html",marca=list(gri.marca),prezzo=list(gri.prezzo))
     
 
 @app.route("/tool", methods=["GET"])
