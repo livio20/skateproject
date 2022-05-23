@@ -108,10 +108,6 @@ def login():
 def home():
     return render_template("home.html")
 
-@app.route("/th", methods=["POST", "GET"])
-def hme():
-    return render_template("th1.html")
-
 @app.route("/login1", methods=["GET"])
 def home1():
     return render_template("home.html")
@@ -129,7 +125,7 @@ def tavole():
 @app.route("/dettaglio_tavole/<foto>", methods=["GET"])
 def dettaglio_tavole(foto):
     tav=tavole1[tavole1['foto']==foto]
-    return render_template("dettaglio_tavole.html",marca=list(tav.marca),prezzo=list(tav.prezzo),dimensione=list(tav.dimensione))
+    return render_template("dettaglio_tavole.html",marca=list(tav.marca),prezzo=list(tav.prezzo),dimensione=list(tav.dimensione),foto=list(tav.foto))
     
 
 @app.route("/truck", methods=["GET"])
@@ -139,7 +135,7 @@ def truck():
 @app.route("/dettaglio_truck/<foto>", methods=["GET"])
 def dettaglio_truck(foto):
     tru=truck1[truck1['foto']==foto]
-    return render_template("dettaglio_truck.html",marca=list(tru.marca),prezzo=list(tru.prezzo),dimensione=list(tru.dimensione))
+    return render_template("dettaglio_truck.html",marca=list(tru.marca),prezzo=list(tru.prezzo),dimensione=list(tru.dimensione),foto=list(tru.foto))
     
 
 @app.route("/ruote", methods=["GET"])
@@ -149,7 +145,7 @@ def ruote():
 @app.route("/dettaglio_ruote/<foto>", methods=["GET"])
 def dettaglio_ruote(foto):
     ruo=ruote1[ruote1['foto']==foto]
-    return render_template("dettaglio_ruote.html",marca=list(ruo.marca),prezzo=list(ruo.prezzo),dimensione=list(ruo.dimensione))
+    return render_template("dettaglio_ruote.html",marca=list(ruo.marca),prezzo=list(ruo.prezzo),dimensione=list(ruo.dimensione),foto=list(ruo.foto))
     
 
 @app.route("/cuscinetti", methods=["GET"])
@@ -169,7 +165,7 @@ def hardware():
 @app.route("/dettaglio_hardware/<foto>", methods=["GET"])
 def dettaglio_hardware(foto):
     har=hardware1[hardware1['foto']==foto]
-    return render_template("dettaglio_hardware.html",marca=list(har.marca),prezzo=list(har.prezzo),dimensione=list(har.dimensione))
+    return render_template("dettaglio_hardware.html",marca=list(har.marca),prezzo=list(har.prezzo),dimensione=list(har.dimensione),foto=list(har.foto))
     
 
 @app.route("/grip_tape", methods=["GET"])
@@ -179,7 +175,7 @@ def grip():
 @app.route("/dettaglio_grip/<foto>", methods=["GET"])
 def dettaglio_grip(foto):
     gri=grip1[grip1['foto']==foto]
-    return render_template("dettaglio_grip.html",marca=list(gri.marca),prezzo=list(gri.prezzo))
+    return render_template("dettaglio_grip.html",marca=list(gri.marca),prezzo=list(gri.prezzo),foto=list(gri.foto))
     
 
 @app.route("/tool", methods=["GET"])
@@ -189,7 +185,7 @@ def tool():
 @app.route("/dettaglio_tool/<foto>", methods=["GET"])
 def dettaglio_tool(foto):
     too=tool1[tool1['foto']==foto]
-    return render_template("dettaglio_tool.html",marca=list(too.marca),prezzo=list(too.prezzo))
+    return render_template("dettaglio_tool.html",marca=list(too.marca),prezzo=list(too.prezzo),foto=list(too.foto))
     
 
 @app.route("/wax", methods=["GET"])
@@ -199,7 +195,7 @@ def wax():
 @app.route("/dettaglio_wax/<foto>", methods=["GET"])
 def dettaglio_wax(foto):
     waa=wax1[wax1['foto']==foto]
-    return render_template("dettaglio_wax.html",marca=list(waa.marca),prezzo=list(waa.prezzo))
+    return render_template("dettaglio_wax.html",marca=list(waa.marca),prezzo=list(waa.prezzo),foto=list(waa.foto))
     
 
 

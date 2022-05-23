@@ -14,6 +14,18 @@
     <nav>
         <ul>
             <li><a href="/home">Home</a></li>
+            <li> <a href="/home">Skateboards</a>
+                <ul>
+                    <li><a href="/tavole">Tavole</a></li>
+                    <li><a href="/truck">Truck</a></li>
+                    <li><a href="/ruote">Route</a></li>
+                    <li><a href="/cuscinetti">Cuscinetti</a></li>
+                    <li><a href="/hardware">Hardware</a></li>
+                    <li><a href="/grip_tape">Grip-tape</a></li>
+                    <li><a href="/tool">Tool</a>
+                    <li><a href="/wax">Wax</a>
+                </ul>
+            </li>
 
         </ul>
 
@@ -25,7 +37,7 @@
             <div class="container-imgs">
                 
                 {%for image in risultato%}
-                <a href="/dettaglio_ruote/{{image}}"><img src="static/img/route/{{image}}" /></href>
+                <a href="../dettaglio_ruote/{{image}}"><img src="static/img/route/{{image}}" /></href>
                 {%endfor%}
 
         </article>

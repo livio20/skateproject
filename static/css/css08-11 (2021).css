@@ -9,7 +9,7 @@ nav,
 section {
     display: block;
 }
- 
+
 body {
 
     margin: 0 auto 0 auto;
@@ -28,7 +28,7 @@ header {
     height: 100px;
     background-color: #1b272c;
     padding: 10px;
-   
+
     -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
     -moz-box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
@@ -56,7 +56,7 @@ nav {
     width: 100%;
     height: 48px;
     background-color: #1b272c;
-    margin: 10px 0 0 0 ;
+    margin: 10px 0 0 0;
     -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
     -moz-box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
@@ -146,7 +146,7 @@ ul {
 
 ul li {
     font: bold 13px/18px sans-serif;
- 
+
     display: inline-block;
     margin-right: -4px;
     position: relative;
@@ -161,7 +161,7 @@ ul li {
 }
 
 ul li a {
-    color:#F8F8FF;
+    color: #F8F8FF;
 }
 
 ul li:hover {
@@ -182,7 +182,7 @@ ul li ul {
     opacity: 0;
     visibility: hidden;
     -webkit-transiton: opacity 0.2s;
-    
+
 }
 
 ul li ul li {
@@ -232,32 +232,46 @@ sium {
 }
 
 #myBtn {
-    display: none; /* Hidden by default */
-    position: fixed; /* Fixed/sticky position */
-    bottom: 20px; /* Place the button at the bottom of the page */
-    right: 30px; /* Place the button 30px from the right */
-    z-index: 99; /* Make sure it does not overlap */
-    border: none; /* Remove borders */
-    outline: none; /* Remove outline */
-    background-color: red; /* Set a background color */
-    color: white; /* Text color */
-    cursor: pointer; /* Add a mouse pointer on hover */
-    padding: 15px; /* Some padding */
-    border-radius: 10px; /* Rounded corners */
-    font-size: 18px; /* Increase font size */
-  }
-  
-  #myBtn:hover {
-    background-color: #555; /* Add a dark-grey background on hover */
+    display: none;
+    /* Hidden by default */
+    position: fixed;
+    /* Fixed/sticky position */
+    bottom: 20px;
+    /* Place the button at the bottom of the page */
+    right: 30px;
+    /* Place the button 30px from the right */
+    z-index: 99;
+    /* Make sure it does not overlap */
+    border: none;
+    /* Remove borders */
+    outline: none;
+    /* Remove outline */
+    background-color: red;
+    /* Set a background color */
+    color: white;
+    /* Text color */
+    cursor: pointer;
+    /* Add a mouse pointer on hover */
+    padding: 15px;
+    /* Some padding */
+    border-radius: 10px;
+    /* Rounded corners */
+    font-size: 18px;
+    /* Increase font size */
+}
 
-  }
+#myBtn:hover {
+    background-color: #555;
+    /* Add a dark-grey background on hover */
+
+}
 
 
 
-  .thumb {
+.thumb {
     width: 150px;
     height: 150px;
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
-  }
+}
