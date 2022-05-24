@@ -32,7 +32,10 @@ SHOPS1 = gpd.read_file('SHOPS.geojson')
 def scelta():
     return render_template("choice.html")
 
+@app.route('/compra', methods=['GET'])
+def compra():
 
+   return render_template("compra.html")
 
 @app.route('/selezione', methods=['GET'])
 def selezione():

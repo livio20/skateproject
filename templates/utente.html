@@ -5,6 +5,7 @@
     <meta charset="utf-8">
     <title>SkateShop</title>
     <link href="static/css/css08-11(2022).css" rel="stylesheet">
+    <link rel="stylesheet" href="static/css/button.css">
 </head>
  
 <body>
@@ -12,6 +13,17 @@
         <img src="static/img/logo/logo_large.png" />
     </header>
   
+    <svg xmlns="http://www.w3.org/2000/svg" version="1.1">
+        <defs>
+            <filter id="gooey">
+                <!-- in="sourceGraphic" -->
+                <feGaussianBlur in="SourceGraphic" stdDeviation="5" result="blur" />
+                <feColorMatrix in="blur" type="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 19 -9"
+                    result="highContrastGraphic" />
+                <feComposite in="SourceGraphic" in2="highContrastGraphic" operator="atop" />
+            </filter>
+        </defs>
+    </svg>
     <div class="content">
         <section>
             <article>
@@ -23,7 +35,21 @@
                             <input id="r1" type = "radio" name = "Scelta" class="radio1" value = "login"/>
                             <label for="r1">login</label>
 
-                            <p><input type = "submit" value = "clicca qui" /></p>
+                            <button id="gooey-button">
+                                conferma
+                                <span class="bubbles">
+                                    <span class="bubble"></span>
+                                    <span class="bubble"></span>
+                                    <span class="bubble"></span>
+                                    <span class="bubble"></span>
+                                    <span class="bubble"></span>
+                                    <span class="bubble"></span>
+                                    <span class="bubble"></span>
+                                    <span class="bubble"></span>
+                                    <span class="bubble"></span>
+                                    <span class="bubble"></span>
+                                </span>
+                            </button>
 
                             
                             <input id="r2" type = "radio" name = "Scelta" class="radio2" value = "new_account"/>
