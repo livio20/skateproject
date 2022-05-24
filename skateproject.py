@@ -37,6 +37,11 @@ def compra():
 
    return render_template("compra.html")
 
+@app.route('/paga', methods=['GET'])
+def paga():
+
+   return render_template("paga.html")   
+
 @app.route('/selezione', methods=['GET'])
 def selezione():
 
