@@ -2,11 +2,12 @@
 <html lang="it">
 
 <head>
-    <meta charset="utf-8">
-    <title>SkateShop</title>
-    <link href="static/css/css08-11(2022).css" rel="stylesheet">
 
-    <link rel="stylesheet" href="static/css/button.css">
+    <meta charset="utf-8">
+    <title>HypeSkate</title>
+    <link href="static/css/choice.css" rel="stylesheet">
+    <link rel="stylesheet" href="static/css/GButton.css">
+
 </head>
 
 <body>
@@ -14,19 +15,7 @@
     <header>
         <img src="static/img/logo/logo_large.png" />
     </header>
-    <svg xmlns="http://www.w3.org/2000/svg" version="1.1">
-        <defs>
-            <filter id="gooey">
-                <!-- in="sourceGraphic" -->
-                <feGaussianBlur in="SourceGraphic" stdDeviation="5" result="blur" />
-                <feColorMatrix in="blur" type="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 19 -9"
-                    result="highContrastGraphic" />
-                <feComposite in="SourceGraphic" in2="highContrastGraphic" operator="atop" />
-            </filter>
-        </defs>
-    </svg>
 
-  
     <div class="content">
         <section>
             <article>
@@ -34,14 +23,13 @@
                     <ul>
                         <form action="/selezione" method="GET">
 
-
-
                             <input id="r1" type="radio" name="Scelta" class="radio1" value="utente" />
-                            <label for="r1">utente</label>
+                            <label for="r1">User</label>
 
                             <button id="gooey-button">
-                                conferma
+                                Confirm
                                 <span class="bubbles">
+
                                     <span class="bubble"></span>
                                     <span class="bubble"></span>
                                     <span class="bubble"></span>
@@ -52,11 +40,12 @@
                                     <span class="bubble"></span>
                                     <span class="bubble"></span>
                                     <span class="bubble"></span>
+                                    
                                 </span>
                             </button>
 
                             <input id="r2" type="radio" name="Scelta" class="radio2" value="ospite" />
-                            <label for="r2">ospite</label>
+                            <label for="r2">Guest</label>
 
 
 
@@ -69,9 +58,23 @@
     </div>
 
     <footer>
+
         <p>copyright 2021 - solotchi.livio - siummmmm - info@miosito.com</p>
+
     </footer>
 
 </body>
 
+<svg>
+    <defs>
+        <filter id="gooey">
+            <feGaussianBlur in="SourceGraphic" stdDeviation="5" result="blur" />
+            <feColorMatrix in="blur" type="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 19 -9"
+                result="highContrastGraphic" />
+            <feComposite in="SourceGraphic" in2="highContrastGraphic" operator="atop" />
+        </filter>
+    </defs>
+</svg>
+
 </html>
+
