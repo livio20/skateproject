@@ -66,8 +66,8 @@ nav {
 }
 
 article {
-    width: 1080px;
-    height: 1130px;
+    width: 1090px;
+    height: 1250px;
     float: left;
     background-color: #dcd6cd;
     padding: 10px;
@@ -274,4 +274,22 @@ sium {
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
+}
+
+
+
+.container-imgs a img {
+    width: 200px;
+    height: 200px;
+}
+
+article a img {
+    width: 250px;
+    height: 250px;
+}
+
+.txt{
+height: 69px;
+width: 400px;
+font-size: 30px;
 }

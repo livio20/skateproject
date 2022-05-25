@@ -16,37 +16,39 @@
 
     <nav>
         <ul>
-            <li><a href="/storia">Storia</a></li>
+            <li> <a href="/home">Home</a>
+            <li><a href="/storia">History</a></li>
             <li> <a href="/home">Skateboards</a>
                 <ul>
-                    <li><a href="/tavole">Tavole</a></li>
+                    <li><a href="/tavole">Deck</a></li>
                     <li><a href="/truck">Truck</a></li>
-                    <li><a href="/ruote">Route</a></li>
-                    <li><a href="/cuscinetti">Cuscinetti</a></li>
+                    <li><a href="/ruote">Wheels</a></li>
+                    <li><a href="/cuscinetti">Bearings</a></li>
                     <li><a href="/hardware">Hardware</a></li>
                     <li><a href="/grip_tape">Grip-tape</a></li>
                     <li><a href="/tool">Tool</a>
                     <li><a href="/wax">Wax</a>
                 </ul>
             </li>
-            <li> <a href="/home">Guida</a>
+            <li> <a href="/home">Guide</a>
                     <ul>
-                        <li><a href="/guida_tavole">Guida Tavole</a></li>
-                        <li><a href="/guida_truck">Guida Truck</a></li>
-                        <li><a href="/guida_ruote">Guida Ruote</a></li>
+                        <li><a href="/guida_tavole">Guide Deck</a></li>
+                        <li><a href="/guida_truck">Guide Truck</a></li>
+                        <li><a href="/guida_ruote">Guide Wheels</a></li>
                     </ul>
             </li>
 
-            <li><a href="/contatti">Contatti</a></li>
-            <li><a href="/maps">dove trocarci</a></li>
-            <li><a href="/skatepark">skatepark</a></li>
-            <li> <a href="/skateshop">skateshop</a>
+            <li><a href="/contatti">Contacs</a></li>
+            <li><a href="/maps">Where to find us</a></li>
+            <li><a href="/skatepark">Skatepark</a></li>
+            <li> <a href="/skateshop">Skateshop</a>
         </ul>
     </nav>
 
     <section>
         <article>
-           
+            <div class="container-imgs">
+
             {%for image in risultato%}
             <a href="/dettaglio_tool/{{image}}"><img src="static/img/tool/{{image}}" /></href>
             {%endfor%}

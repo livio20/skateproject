@@ -16,7 +16,7 @@ section {
 }
 
 body {
-
+    background-color: #696969;
     margin: 0 auto 0 auto;
     font-size: 18px;
     font-family: Arial, sans-serif;
@@ -72,7 +72,7 @@ nav {
 
 article {
     width: 1080px;
-    height: 1130px;
+    height: 1000px;
     float: left;
     background-color: #dcd6cd;
     padding: 10px;
@@ -129,7 +129,7 @@ footer {
     clear: both;
     width: 100%;
     height: 50px;
-    background-color: #4b4a48;
+    background-color: #1b272c;
     padding: 10px;
     margin: 10px;
     color: #fff;
