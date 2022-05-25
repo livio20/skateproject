@@ -10,11 +10,6 @@ section {
     display: block;
 }
 
-section {
-    display: flex;
-    justify-content: center;
-}
-
 body {
 
     margin: 0 auto 0 auto;
@@ -37,6 +32,9 @@ header {
     -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
     -moz-box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 header img {
@@ -279,14 +277,4 @@ sium {
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
-}
-
-.container-imgs a img {
-    width: 200px;
-    height: 200px;
-}
-
-article a img {
-    width: 250px;
-    height: 250px;
 }

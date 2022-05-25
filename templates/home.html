@@ -4,14 +4,31 @@
 <head>
     <meta charset="utf-8">
     <title>SkateShop</title>
-    <link href="static/css/css08-11 (2021).css" rel="stylesheet">
+    <link href="static/css/pages.css" rel="stylesheet">
+    <link rel="stylesheet" href="static/css/GButton.css">
 
 </head>
  
 <body>
     <header>
         <img src="static/img/logo/logo_large.png" />
+        <button id="gooey-button" class="btn">
+            Account
+            <span class="bubbles">
 
+                <span class="bubble"></span>
+                <span class="bubble"></span>
+                <span class="bubble"></span>
+                <span class="bubble"></span>
+                <span class="bubble"></span>
+                <span class="bubble"></span>
+                <span class="bubble"></span>
+                <span class="bubble"></span>
+                <span class="bubble"></span>
+                <span class="bubble"></span>
+                
+            </span>
+        </button>
     </header>
 
     <nav>
@@ -39,6 +56,8 @@
 
             <li><a href="/contatti">Contatti</a></li>
             <li><a href="/maps">dove trocarci</a></li>
+            <li><a href="/skatepark">skatepark</a></li>
+            <li> <a href="/skateshop">skateshop</a>
         </ul>
     </nav>
 
@@ -60,3 +79,14 @@
 </body>
 
 </html>
+
+<svg>
+    <defs>
+        <filter id="gooey">
+            <feGaussianBlur in="SourceGraphic" stdDeviation="5" result="blur" />
+            <feColorMatrix in="blur" type="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 19 -9"
+                result="highContrastGraphic" />
+            <feComposite in="SourceGraphic" in2="highContrastGraphic" operator="atop" />
+        </filter>
+    </defs>
+</svg>

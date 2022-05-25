@@ -18,8 +18,8 @@
 
     <nav>
         <ul>
-            <li><a href="/home">Home</a></li>
-            <li><a href="/home">Skateboards</a>
+            <li><a href="/storia">Storia</a></li>
+            <li> <a href="/home">Skateboards</a>
                 <ul>
                     <li><a href="/tavole">Tavole</a></li>
                     <li><a href="/truck">Truck</a></li>
@@ -31,6 +31,18 @@
                     <li><a href="/wax">Wax</a>
                 </ul>
             </li>
+            <li> <a href="/home">Guida</a>
+                    <ul>
+                        <li><a href="/guida_tavole">Guida Tavole</a></li>
+                        <li><a href="/guida_truck">Guida Truck</a></li>
+                        <li><a href="/guida_ruote">Guida Ruote</a></li>
+                    </ul>
+            </li>
+
+            <li><a href="/contatti">Contatti</a></li>
+            <li><a href="/maps">dove trocarci</a></li>
+            <li><a href="/skatepark">skatepark</a></li>
+            <li> <a href="/skateshop">skateshop</a>
         </ul>
     </nav>
 
@@ -41,7 +53,7 @@
                 {%for image in risultato%}
                 <a href="/dettaglio_cuscinetti/{{image}}"><img src="static/img/cuscinetti/{{image}}" /></href>
                 {%endfor%}
-
+            
         </article>
     </section>
 

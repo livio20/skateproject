@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <title>SkateShop</title>
     <link href="static/css/choice.css" rel="stylesheet">
-    <link rel="stylesheet" href="static/css/button.css">
+    <link rel="stylesheet" href="static/css/GButton.css">
 
 </head>
  
@@ -23,8 +23,11 @@
                         <form action="/selezione1" method = "GET">
 
   
-                            <input id="r1" type = "radio" name = "Scelta" class="radio1" value = "login"/>
-                            <label for="r1">login</label>
+                            <input type = "radio" name = "Scelta" class="big" value = "login"/>
+                            <label class="label">login</label>
+
+                            <input  type = "radio" name = "Scelta" class="big" value = "new_account"/>
+                            <label class="label">new_account</label>
 
                             <button id="gooey-button">
                                 conferma
@@ -43,8 +46,7 @@
                             </button>
 
                             
-                            <input id="r2" type = "radio" name = "Scelta" class="radio2" value = "new_account"/>
-                            <label for="r2">new_account</label>
+                            
                            
                             
                         </form>

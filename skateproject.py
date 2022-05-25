@@ -112,9 +112,8 @@ def login():
 
         for _, r in dati.iterrows():
             if email == r['email'] and pas == r['psw']:  
-                return '<h1>login effettuato </h1>'
-
-        return '<h1>Errore</h1>'
+                
+                return render_template('error.html')
                        
 
 @app.route("/home", methods=["POST", "GET"])
