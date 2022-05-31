@@ -11,7 +11,8 @@ import pandas as pd
 from flask import Flask, render_template, request, Response , redirect , url_for
 app = Flask(__name__)
 
-
+#IMPORTAZIONE CSV
+#------------------------------------------------------------------------------------------------------------------------------------------------------------
 cuscinetti1 = pd.read_csv("static/csv/cuscinetti.csv")
 grip1 = pd.read_csv("static/csv/grip.csv")
 hardware1 = pd.read_csv("static/csv/hardware.csv")
@@ -25,9 +26,9 @@ park1 = pd.read_csv('skatepark_milano_list.csv')
 milano = gpd.read_file('ds964_nil_wm-20220322T104009Z-001.zip')
 PARKS1 = gpd.read_file('PARKS.geojson')
 SHOPS1 = gpd.read_file('SHOPS.geojson')
+#------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-
-
+#------------------------------------------------------------------------------------------------------------------------------------------------------------
 @app.route("/", methods=["GET"])
 def scelta():
     return render_template("choice.html")
@@ -49,9 +50,28 @@ def selezione1():
         return render_template("login.html")
     elif scelta == 'new_account':
         return render_template("new_account.html")
+#------------------------------------------------------------------------------------------------------------------------------------------------------------
 
+
+##login##
+#------------------------------------------------------------------------------------------------------------------------------------------------------------
+@app.route('/login', methods=['GET', 'POST'])
+def login():
+    if request.method == 'GET':
+        return render_template('login.html')
+    elif request.method == 'POST':
+            psw = request.form.get("psw")
+            email = request.form.get("email")
+            dati = pd.read_csv("database.csv")
+            for _, r in dati.iterrows():
+                print(r['email'])
+                if email == r['email'] and psw == r['psw']:
+                    return render_template("home.html")   
+            return render_template("error.html")
+#------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 ##registrazione##
+#------------------------------------------------------------------------------------------------------------------------------------------------------------
 @app.route('/register', methods=['GET', 'POST'])
 def register():
     global utente
@@ -62,65 +82,55 @@ def register():
         psw = request.form.get("psw")
         cpas = request.form.get("psw-repeat")
         email = request.form.get("email")
-        utente = [{"psw": psw,"email":email}]
-
-        #controllo password
+        utente = [{"psw": psw, "email": email}]
+                   
         if cpas!= psw:
             return 'le password non corrispondono'
         else:
-            dati_append = dati.append(utente,ignore_index=True)
-            dati_append.to_csv('database.csv',index=False)
-            return render_template('login.html',  psw = psw , email = email)
+            dati = pd.read_csv("database.csv")
+            dati = dati.append(utente, ignore_index=True)
+            dati.to_csv('database.csv')
+            return render_template('home.html', psw = psw , email = email)
+#------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
-##login##
-@app.route('/login', methods=['GET', 'POST'])
-def login():
-    #dichiarazione di df. legge il file json creato per preservare i dati degli utenti
-        #login sistemato---
-        # ciclo for di controllo alternativo
-        if request.method == 'GET':
-            return render_template('home.html')
-        elif request.method == 'POST':
-            pas = request.form.get("psw")
-            email = request.form.get("email")
-            print(psw, email)
-
-        for _, r in dati.iterrows():
-            if email == r['email'] and pas == r['psw']:  
-                
-                return render_template('error.html')
-                       
-
+#------------------------------------------------------------------------------------------------------------------------------------------------------------
 @app.route("/termini", methods=["GET"])
 def termini():
     return render_template("termini.html")
+#------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
+#------------------------------------------------------------------------------------------------------------------------------------------------------------
 @app.route("/home", methods=["POST", "GET"])
 def home():
     return render_template("home.html")
-
+#------------------------------------------------------------------------------------------------------------------------------------------------------------
+#------------------------------------------------------------------------------------------------------------------------------------------------------------
 @app.route("/account", methods=["GET"])
 def acc():
     return render_template("utente.html")
-
+#------------------------------------------------------------------------------------------------------------------------------------------------------------
+#------------------------------------------------------------------------------------------------------------------------------------------------------------
 @app.route("/storia", methods=["GET"])
 def storia():
     return render_template("storia.html")
+#------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
+#------------------------------------------------------------------------------------------------------------------------------------------------------------
 @app.route("/tavole", methods=["GET"])
 def tavole():
     return render_template("tavole.html",risultato=tavole1['foto'].to_list())
+#------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-
+#------------------------------------------------------------------------------------------------------------------------------------------------------------
 @app.route("/dettaglio_tavole/<foto>", methods=["GET"])
 def dettaglio_tavole(foto):
     tav=tavole1[tavole1['foto']==foto]
     return render_template("dettaglio_tavole.html",marca=list(tav.marca),prezzo=list(tav.prezzo),dimensione=list(tav.dimensione),foto=list(tav.foto))
-    
-
+#------------------------------------------------------------------------------------------------------------------------------------------------------------
+#------------------------------------------------------------------------------------------------------------------------------------------------------------
 @app.route("/truck", methods=["GET"])
 def truck():
     return render_template("truck.html",risultato=truck1['foto'].to_list())
