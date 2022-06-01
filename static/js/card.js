@@ -1,5 +1,6 @@
 $(document).ready(function () {
 
+    
     Stripe.setPublishableKey('pk_test_9D43kM3d2vEHZYzPzwAblYXl');
 
     var cardNumber, cardMonth, cardYear, cardCVC, cardHolder;
